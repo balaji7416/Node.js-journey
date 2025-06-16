@@ -1,13 +1,27 @@
 const fs = require("fs");
+const path = require("path");
 
-const addNote = (note) =>{
-    fs.appendFileSync("notes.txt",note+'\n');
+// Build file path
+const notesFilePath = path.join (__dirname, 'notes.txt');
+
+
+const addNote = (note) => {
+    fs.appendFileSync(notesFilePath, note + '\n');
     console.log("note added successfully");
 }
 
-const listNotes = () =>{
-    let data = fs.readFileSync("notes.txt","utf-8");
+const listNotes = () => {
+    let data = fs.readFileSync(notesFilePath, "utf-8");
     console.log(data);
 }
 
-module.exports = {addNote,listNotes};
+//create function to delete a note
+const deleteNote = (note) => {
+    let data = fs.readFileSync(notesFilePath, "utf-8");
+    let notesArray = data.split('\n').filter(n => n !== note);
+    fs.writeFileSync(notesFilePath, notesArray.join('\n'));
+    console.log("note deleted successfully");
+}
+
+module.exports = { addNote, listNotes, deleteNote };
+

@@ -1,2 +1,1 @@
-learning fs module
-well iam trying though
+well i used path module to create notes.txt file in the same directory as notes.js file

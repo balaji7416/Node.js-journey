@@ -1,0 +1,9 @@
+
+System Info:
+===============
+Platform: win32
+Architecture: x64
+CPU Cores: 12
+Total Memory in GB: 15.73;
+Free Memory in GB: 6.17;
+Uptime: 5477.656 seconds
